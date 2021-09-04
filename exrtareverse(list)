@@ -1,0 +1,12 @@
+def extrareverse(a_list):
+    alist = a_list.copy()
+    
+    for idx in range(len(a_list)):
+        if not isinstance(a_list[idx], list):
+            alist[len(a_list)-1-idx] = a_list[idx]
+        else:
+            alist[len(a_list)-1-idx] = extrareverse(a_list[idx])
+        
+    return alist    
+    
+print(extrareverse([[1, 2], [3, 4], [5, 6, 7]]))
